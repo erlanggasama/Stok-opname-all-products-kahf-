@@ -765,16 +765,16 @@
             const storeSaved = document.getElementById('storeSaved');
 
             // ============================================================
-            //  GOOGLE FORM — entry IDs (sesuaikan dengan form Anda)
+            //  GOOGLE FORM — entry IDs yang benar dari pre-filled link
             // ============================================================
             const FORM_URL =
                 'https://docs.google.com/forms/d/e/1FAIpQLSfxbXC2p0rugA63OhJhrR-P5D4rqhD46lXm2eBhxYEqaFKm8g/formResponse';
 
-            // ⚠️ Ganti entry ID berikut dengan yang benar dari form Anda.
-            // Cara dapatkan: buka form di browser → inspect element → cari name="entry.XXXXXXXXXX"
-            const ENTRY_STORE = 'entry.1646932931'; // contoh, ganti dengan milik Anda
-            const ENTRY_PRODUCT = 'entry.1026473704'; // contoh, ganti dengan milik Anda
-            const ENTRY_QUANTITY = 'entry.325732632'; // contoh, ganti dengan milik Anda
+            // ID yang diambil dari link pre-filled:
+            // https://docs.google.com/forms/d/e/.../viewform?usp=pp_url&entry.1645627044=Test&entry.1703783121=Stock+awal&entry.1834168342=EDP&entry.2006386930=1
+            const ENTRY_STORE = 'entry.1645627044';    // Nama Toko
+            const ENTRY_PRODUCT = 'entry.1834168342';  // Nama Produk
+            const ENTRY_QUANTITY = 'entry.2006386930'; // Jumlah
 
             // ============================================================
             //  POPULATE DROPDOWN
@@ -908,14 +908,12 @@
                     formData.append(ENTRY_PRODUCT, product);
                     formData.append(ENTRY_QUANTITY, String(qtyNum));
 
-                    const response = await fetch(FORM_URL, {
+                    await fetch(FORM_URL, {
                         method: 'POST',
-                        mode: 'no-cors', // Google Forms menerima no-cors
+                        mode: 'no-cors',
                         body: formData
                     });
 
-                    // Karena mode 'no-cors', response tidak bisa dibaca.
-                    // Kita anggap sukses jika tidak ada error network.
                     showNotification(
                         `Data stok "${product}" berhasil disimpan!`,
                         'success'
@@ -972,7 +970,7 @@
             }
 
             console.log('✅ Erlangga Stock Opname siap digunakan!');
-            console.log('📝 Pastikan entry ID Google Form sudah benar.');
+            console.log('📝 Entry ID sudah diperbarui dengan ID dari form Anda.');
 
         })();
     </script>
