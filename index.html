@@ -34,7 +34,6 @@
             --text-muted: #7a8a84;
             --shadow-sm: 0 2px 8px rgba(30, 61, 50, 0.08);
             --shadow-md: 0 8px 32px rgba(30, 61, 50, 0.12);
-            --shadow-lg: 0 16px 48px rgba(30, 61, 50, 0.16);
             --radius: 16px;
             --radius-sm: 10px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -57,7 +56,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== APP CONTAINER ===== */
         .app {
             max-width: 480px;
             width: 100%;
@@ -135,15 +133,8 @@
         }
 
         @keyframes pulse-dot {
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.5;
-                transform: scale(0.8);
-            }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
         }
 
         .header h1 {
@@ -201,7 +192,6 @@
         .form-group {
             margin-bottom: 18px;
         }
-
         .form-group:last-of-type {
             margin-bottom: 0;
         }
@@ -249,7 +239,6 @@
         .form-control[type="number"] {
             -moz-appearance: textfield;
         }
-
         .form-control[type="number"]::-webkit-outer-spin-button,
         .form-control[type="number"]::-webkit-inner-spin-button {
             -webkit-appearance: none;
@@ -260,7 +249,6 @@
         .select-wrapper {
             position: relative;
         }
-
         .select-wrapper::after {
             content: '▾';
             position: absolute;
@@ -272,30 +260,25 @@
             pointer-events: none;
             transition: transform var(--transition);
         }
-
-        .select-wrapper select:focus+.select-wrapper::after {
+        .select-wrapper select:focus + .select-wrapper::after {
             transform: translateY(-50%) rotate(180deg);
         }
-
         .select-wrapper select {
             padding-right: 40px;
             cursor: pointer;
             background: var(--white);
         }
-
         .select-wrapper select optgroup {
             font-weight: 600;
             color: var(--green-dark);
             background: var(--white);
             padding: 4px 0;
         }
-
         .select-wrapper select optgroup option {
             font-weight: 400;
             color: var(--text-primary);
             padding: 4px 8px;
         }
-
         .select-wrapper select optgroup option:checked {
             background: var(--green-pale);
         }
@@ -328,12 +311,10 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(30, 61, 50, 0.25);
         }
-
         .btn-submit:active:not(:disabled) {
             transform: translateY(0px);
             box-shadow: 0 4px 12px rgba(30, 61, 50, 0.15);
         }
-
         .btn-submit:disabled {
             opacity: 0.7;
             cursor: not-allowed;
@@ -349,19 +330,15 @@
             border-radius: 50%;
             animation: spin 0.7s linear infinite;
         }
-
         .btn-submit.loading .spinner {
             display: inline-block;
         }
-
         .btn-submit.loading .btn-text {
             opacity: 0.8;
         }
 
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
 
         .btn-submit .btn-icon {
@@ -382,32 +359,26 @@
             animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 1px solid transparent;
         }
-
         .notification.show {
             display: flex;
         }
-
         .notification.success {
             background: #e6f4ee;
             border-color: #a3d4b8;
             color: #1a5a3a;
         }
-
         .notification.error {
             background: #fde8e8;
             border-color: #f5b8b8;
             color: #a03333;
         }
-
         .notification .notif-icon {
             font-size: 22px;
             flex-shrink: 0;
         }
-
         .notification .notif-msg {
             flex: 1;
         }
-
         .notification .notif-close {
             background: none;
             border: none;
@@ -419,20 +390,13 @@
             transition: opacity var(--transition);
             line-height: 1;
         }
-
         .notification .notif-close:hover {
             opacity: 1;
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px) scale(0.96);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            from { opacity: 0; transform: translateY(12px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         /* ===== STORE NAME SAVED INDICATOR ===== */
@@ -446,69 +410,32 @@
             opacity: 0;
             transition: opacity var(--transition);
         }
-
         .store-saved.show {
             opacity: 1;
         }
-
         .store-saved .check {
             color: var(--green-medium);
         }
 
-        /* ===== RESPONSIVE TWEAKS ===== */
+        /* ===== RESPONSIVE ===== */
         @media (min-width: 600px) {
-            body {
-                padding: 32px 24px 80px;
-            }
-
-            .header h1 {
-                font-size: 32px;
-            }
-
-            .card {
-                padding: 28px 28px 32px;
-            }
-
-            .form-control {
-                font-size: 16px;
-                padding: 14px 18px;
-            }
-
-            .btn-submit {
-                padding: 16px 28px;
-                font-size: 17px;
-            }
+            body { padding: 32px 24px 80px; }
+            .header h1 { font-size: 32px; }
+            .card { padding: 28px 28px 32px; }
+            .form-control { font-size: 16px; padding: 14px 18px; }
+            .btn-submit { padding: 16px 28px; font-size: 17px; }
         }
 
         @media (max-width: 380px) {
-            body {
-                padding: 12px 12px 60px;
-            }
-
-            .header {
-                padding: 18px 18px 16px;
-            }
-
-            .header h1 {
-                font-size: 22px;
-            }
-
-            .card {
-                padding: 16px 16px 20px;
-            }
-
-            .form-control {
-                font-size: 14px;
-                padding: 10px 14px;
-            }
-
-            .btn-submit {
-                font-size: 15px;
-                padding: 12px 20px;
-            }
+            body { padding: 12px 12px 60px; }
+            .header { padding: 18px 18px 16px; }
+            .header h1 { font-size: 22px; }
+            .card { padding: 16px 16px 20px; }
+            .form-control { font-size: 14px; padding: 10px 14px; }
+            .btn-submit { font-size: 15px; padding: 12px 20px; }
         }
 
-        /* ===== DARK MODE SUPPORT (light only) ===== */
+        /* ===== DARK MODE (light only) ===== */
         @media (prefers-color-scheme: dark) {
             :root {
                 --cream: #faf8f5;
@@ -517,18 +444,10 @@
                 --text-secondary: #4a5a54;
                 --text-muted: #7a8a84;
             }
-
-            body {
-                background: var(--cream);
-            }
-
-            .card {
-                background: var(--white);
-                border-color: rgba(30, 61, 50, 0.04);
-            }
+            body { background: var(--cream); }
+            .card { background: var(--white); border-color: rgba(30, 61, 50, 0.04); }
         }
 
-        /* ===== FOOTER ===== */
         .footer-note {
             text-align: center;
             font-size: 11px;
@@ -538,43 +457,22 @@
             letter-spacing: 0.3px;
             opacity: 0.7;
         }
-
         .footer-note strong {
             color: var(--green-medium);
             font-weight: 500;
         }
 
-        /* ===== UTILITY ===== */
-        .mt-4 {
-            margin-top: 4px;
-        }
-        .mt-8 {
-            margin-top: 8px;
-        }
-        .gap-4 {
-            gap: 4px;
-        }
-        .flex-center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Scrollbar styling */
         .select-wrapper select::-webkit-scrollbar {
             width: 6px;
         }
-
         .select-wrapper select::-webkit-scrollbar-track {
             background: var(--cream);
             border-radius: 8px;
         }
-
         .select-wrapper select::-webkit-scrollbar-thumb {
             background: var(--green-light);
             border-radius: 8px;
         }
-
         .select-wrapper select::-webkit-scrollbar-thumb:hover {
             background: var(--green-medium);
         }
@@ -582,398 +480,378 @@
 </head>
 <body>
 
-    <div class="app" id="app">
-        <!-- ===== HEADER ===== -->
-        <header class="header">
-            <div class="header-content">
-                <div class="header-badge">
-                    <span class="dot"></span>
-                    Stock Opname
-                </div>
-                <h1>Erlangga <span>Stock</span> Opname</h1>
-                <p class="header-sub">Kelola stok produk Kahf dengan mudah</p>
+<div class="app" id="app">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-badge">
+                <span class="dot"></span>
+                Stock Opname
             </div>
-        </header>
-
-        <!-- ===== NOTIFICATION ===== -->
-        <div class="notification" id="notification" role="alert">
-            <span class="notif-icon" id="notifIcon">✅</span>
-            <span class="notif-msg" id="notifMsg">Berhasil disimpan!</span>
-            <button class="notif-close" id="notifClose" aria-label="Tutup notifikasi">✕</button>
+            <h1>Erlangga <span>Stock</span> Opname</h1>
+            <p class="header-sub">Kelola stok produk Kahf dengan mudah</p>
         </div>
+    </header>
 
-        <!-- ===== FORM CARD ===== -->
-        <div class="card">
-            <!-- Store Name -->
-            <div class="form-group">
-                <label class="form-label" for="storeName">
-                    Nama Toko <span class="required">*</span>
-                </label>
-                <input
-                type="text"
-                id="storeName"
-                class="form-control"
-                placeholder="Contoh: Toko Erlangga Jaya"
-                autocomplete="off"
-                />
-                <div class="store-saved" id="storeSaved">
-                    <span class="check">✓</span> Tersimpan otomatis
-                </div>
-            </div>
-
-            <!-- Product Dropdown -->
-            <div class="form-group">
-                <label class="form-label" for="productSelect">
-                    Pilih Produk <span class="required">*</span>
-                </label>
-                <div class="select-wrapper">
-                    <select id="productSelect" class="form-control">
-                        <option value="">— Pilih produk —</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Quantity -->
-            <div class="form-group">
-                <label class="form-label" for="quantity">
-                    Jumlah Stok <span class="required">*</span>
-                </label>
-                <input
-                type="number"
-                id="quantity"
-                class="form-control"
-                placeholder="Masukkan jumlah"
-                min="0"
-                step="1"
-                inputmode="numeric"
-                />
-            </div>
-        </div>
-
-        <!-- ===== SUBMIT BUTTON ===== -->
-        <button class="btn-submit" id="submitBtn">
-            <span class="btn-icon">💾</span>
-            <span class="btn-text">Simpan Data</span>
-            <span class="spinner"></span>
-        </button>
-
-        <p class="footer-note">
-            <strong>Erlangga Stock Opname</strong> · Data tersimpan aman
-        </p>
+    <!-- NOTIFICATION -->
+    <div class="notification" id="notification" role="alert">
+        <span class="notif-icon" id="notifIcon">✅</span>
+        <span class="notif-msg" id="notifMsg">Berhasil disimpan!</span>
+        <button class="notif-close" id="notifClose" aria-label="Tutup notifikasi">✕</button>
     </div>
 
-    <script>
-        (function() {
-            'use strict';
+    <!-- FORM CARD -->
+    <div class="card">
+        <!-- Nama Toko -->
+        <div class="form-group">
+            <label class="form-label" for="storeName">
+                Nama Toko <span class="required">*</span>
+            </label>
+            <input type="text" id="storeName" class="form-control"
+                   placeholder="Contoh: Toko Erlangga Jaya" autocomplete="off" />
+            <div class="store-saved" id="storeSaved">
+                <span class="check">✓</span> Tersimpan otomatis
+            </div>
+        </div>
 
-            // ============================================================
-            //  DATA PRODUK
-            // ============================================================
-            const PRODUCT_DATA = [{
-                category: 'Face Wash',
-                items: [
-                    'Kahf Bright Revitalizing Amino Gel Face Wash 100ml',
-                    'Kahf Acne Care Aminogel Face Wash 100ml',
-                    'Kahf Oil and Acne Care Face Wash 100 ml',
-                    '(Revamp) Kahf Skin Energizing & Brightening Face Wash 100ml',
-                    '(Revamp) Kahf Triple Action Oil and Comedo Defense Face Wash 100 ml',
-                    '(Revamp) KAHF GENTLE EXFOLIATING FACE SCRUB 100 ML',
-                    '(Revamp) Kahf Acne and Pore Cleanse Scrub Face Wash 100 ml',
-                    'Kahf Oil and Acne Care Face Wash 50 ml',
-                    'Kahf Skin Energizing and Brightening Face Wash 50 ml'
-                ]
-            }, {
-                category: 'Sunscreen',
-                items: [
-                    'Kahf Bright Fresh Sunscreen Moisturizer SPF 35',
-                    'Kahf Bright Fresh Sunscreen Serum SPF50 25 ml',
-                    'Kahf Bright Fresh Sunscreen Serum SPF50 40 ml'
-                ]
-            }, {
-                category: 'Serum',
-                items: [
-                    'Kahf Brightening and Texture Refining Face Serum 35 ml',
-                    'Kahf Acne Clear & Post-acne Repair Niosome Serum',
-                    'Kahf Bright Intensifying & Pigment Corrector Niosome Serum',
-                    'Kahf Refill Acne Clear & Post-acne Repair Niosome Serum 25 ml',
-                    'Kahf Refill Bright Intensitying & Pigment Corrector Niosome Serum'
-                ]
-            }, {
-                category: 'Body Wash',
-                items: [
-                    'Kahf Acne Fight and Relaxing Body Wash 200 ml',
-                    'Kahf Brightening and Cooling Body Wash 200 ml'
-                ]
-            }, {
-                category: 'Deodorant',
-                items: [
-                    'Kahf Active Fresh Antiperspirant Deodorant Roll On 45 ml',
-                    'Kahf Cooling Power Antiperspirant Deodorant Roll On 45 ml',
-                    'Kahf Extra Dry Antiperspirant Deodorant Roll On 45 ml'
-                ]
-            }, {
-                category: 'Hair Styling',
-                items: [
-                    'Kahf Sleek Classy Water-based Pomade 70g',
-                    'Kahf Matte Dapper Water-based pomade 70g',
-                    'Kahf Volumized Suave Hair Powder 10g',
-                    'Kahf Advancing Beard and Hair Serum 30ml',
-                    'Kahf Nourishing Beard and Hair Oil 30ml'
-                ]
-            }, {
-                category: 'Parfum',
-                items: [
-                    'Kahf Humbling Forest Eau De Toilette 35 ml',
-                    'Kahf Invigorating Waterfall Eau De Toilette 35 ml',
-                    'Kahf Revered Oud Eau De Toilette 35 ml',
-                    'Kahf True Brotherhood Eau De Toilette 35 ml',
-                    'Kahf Revered Oud Eau de Parfum 100ml',
-                    'Kahf Saffron Oud Eau de Parfum 100 ml',
-                    'Kahf Humbling Forest Eau De Parfum',
-                    'Kahf Invigorating Waterfall Eau De Parfum',
-                    'Kahf Aquaterrae Extrait de Parfum 50 ml',
-                    'Kahf Neofougere Extrait de Parfum 50 ml',
-                    'Kahf Santalscape Extrait de Parfum 50 ml',
-                    'Kahf Silverwood Extrait de Parfum 50 ml',
-                    'Kahf Leatherfield Extrait de Parfum 50 ml',
-                    'Kahf Ambremusc Extrait de Parfum 50 ml',
-                    'Kahf Spicestone Extrait de Parfum 50 ml',
-                    'Kahf Mineralwave Extrait de Parfum 50 ml',
-                    'Kahf Aquaterrae Extrait de Parfum 5 ml',
-                    'Kahf Neofougere Extrait de Parfum 5 ml',
-                    'Kahf Santalscape Extrait de Parfum 5 ml',
-                    'Kahf Silverwood Extrait de Parfum 5 ml',
-                    'Kahf Leatherfield Extrait de Parfum 5 ml',
-                    'Kahf Ambremusc Extrait de Parfum 5 ml',
-                    'Kahf Spicestone Extrait de Parfum 5 ml',
-                    'Kahf Mineralwave Extrait de Parfum 5 ml',
-                    'Kahf All-in-One Power Toning Face Spray 100 ml'
-                ]
-            }];
+        <!-- Tipe Transaksi -->
+        <div class="form-group">
+            <label class="form-label" for="transactionType">
+                Tipe Transaksi <span class="required">*</span>
+            </label>
+            <div class="select-wrapper">
+                <select id="transactionType" class="form-control">
+                    <option value="">— Pilih tipe —</option>
+                    <option value="Stock Awal">Stock Awal</option>
+                    <option value="Penjualan">Penjualan</option>
+                    <option value="Pembelian">Pembelian</option>
+                    <option value="Retur">Retur</option>
+                    <option value="Stock Opname">Stock Opname</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+        </div>
 
-            // ============================================================
-            //  DOM REFS
-            // ============================================================
-            const storeNameInput = document.getElementById('storeName');
-            const productSelect = document.getElementById('productSelect');
-            const quantityInput = document.getElementById('quantity');
-            const submitBtn = document.getElementById('submitBtn');
-            const notification = document.getElementById('notification');
-            const notifIcon = document.getElementById('notifIcon');
-            const notifMsg = document.getElementById('notifMsg');
-            const notifClose = document.getElementById('notifClose');
-            const storeSaved = document.getElementById('storeSaved');
+        <!-- Produk -->
+        <div class="form-group">
+            <label class="form-label" for="productSelect">
+                Pilih Produk <span class="required">*</span>
+            </label>
+            <div class="select-wrapper">
+                <select id="productSelect" class="form-control">
+                    <option value="">— Pilih produk —</option>
+                </select>
+            </div>
+        </div>
 
-            // ============================================================
-            //  GOOGLE FORM — entry IDs yang benar dari pre-filled link
-            // ============================================================
-            const FORM_URL =
-                'https://docs.google.com/forms/d/e/1FAIpQLSfxbXC2p0rugA63OhJhrR-P5D4rqhD46lXm2eBhxYEqaFKm8g/formResponse';
+        <!-- Jumlah -->
+        <div class="form-group">
+            <label class="form-label" for="quantity">
+                Jumlah Stok <span class="required">*</span>
+            </label>
+            <input type="number" id="quantity" class="form-control"
+                   placeholder="Masukkan jumlah" min="0" step="1" inputmode="numeric" />
+        </div>
+    </div>
 
-            // ID yang diambil dari link pre-filled:
-            // https://docs.google.com/forms/d/e/.../viewform?usp=pp_url&entry.1645627044=Test&entry.1703783121=Stock+awal&entry.1834168342=EDP&entry.2006386930=1
-            const ENTRY_STORE = 'entry.1645627044';    // Nama Toko
-            const ENTRY_PRODUCT = 'entry.1834168342';  // Nama Produk
-            const ENTRY_QUANTITY = 'entry.2006386930'; // Jumlah
+    <!-- SUBMIT -->
+    <button class="btn-submit" id="submitBtn">
+        <span class="btn-icon">💾</span>
+        <span class="btn-text">Simpan Data</span>
+        <span class="spinner"></span>
+    </button>
 
-            // ============================================================
-            //  POPULATE DROPDOWN
-            // ============================================================
-            function populateProducts() {
-                // Kosongkan (pertahankan option pertama)
-                while (productSelect.options.length > 0) {
-                    productSelect.remove(0);
-                }
+    <p class="footer-note">
+        <strong>Erlangga Stock Opname</strong> · Data tersimpan aman
+    </p>
+</div>
 
-                const defaultOption = document.createElement('option');
-                defaultOption.value = '';
-                defaultOption.textContent = '— Pilih produk —';
-                productSelect.appendChild(defaultOption);
+<script>
+    (function() {
+        'use strict';
 
-                PRODUCT_DATA.forEach(group => {
-                    const optgroup = document.createElement('optgroup');
-                    optgroup.label = group.category;
+        // ============================================================
+        //  DATA PRODUK
+        // ============================================================
+        const PRODUCT_DATA = [
+            { category: 'Face Wash', items: [
+                'Kahf Bright Revitalizing Amino Gel Face Wash 100ml',
+                'Kahf Acne Care Aminogel Face Wash 100ml',
+                'Kahf Oil and Acne Care Face Wash 100 ml',
+                '(Revamp) Kahf Skin Energizing & Brightening Face Wash 100ml',
+                '(Revamp) Kahf Triple Action Oil and Comedo Defense Face Wash 100 ml',
+                '(Revamp) KAHF GENTLE EXFOLIATING FACE SCRUB 100 ML',
+                '(Revamp) Kahf Acne and Pore Cleanse Scrub Face Wash 100 ml',
+                'Kahf Oil and Acne Care Face Wash 50 ml',
+                'Kahf Skin Energizing and Brightening Face Wash 50 ml'
+            ]},
+            { category: 'Sunscreen', items: [
+                'Kahf Bright Fresh Sunscreen Moisturizer SPF 35',
+                'Kahf Bright Fresh Sunscreen Serum SPF50 25 ml',
+                'Kahf Bright Fresh Sunscreen Serum SPF50 40 ml'
+            ]},
+            { category: 'Serum', items: [
+                'Kahf Brightening and Texture Refining Face Serum 35 ml',
+                'Kahf Acne Clear & Post-acne Repair Niosome Serum',
+                'Kahf Bright Intensifying & Pigment Corrector Niosome Serum',
+                'Kahf Refill Acne Clear & Post-acne Repair Niosome Serum 25 ml',
+                'Kahf Refill Bright Intensitying & Pigment Corrector Niosome Serum'
+            ]},
+            { category: 'Body Wash', items: [
+                'Kahf Acne Fight and Relaxing Body Wash 200 ml',
+                'Kahf Brightening and Cooling Body Wash 200 ml'
+            ]},
+            { category: 'Deodorant', items: [
+                'Kahf Active Fresh Antiperspirant Deodorant Roll On 45 ml',
+                'Kahf Cooling Power Antiperspirant Deodorant Roll On 45 ml',
+                'Kahf Extra Dry Antiperspirant Deodorant Roll On 45 ml'
+            ]},
+            { category: 'Hair Styling', items: [
+                'Kahf Sleek Classy Water-based Pomade 70g',
+                'Kahf Matte Dapper Water-based pomade 70g',
+                'Kahf Volumized Suave Hair Powder 10g',
+                'Kahf Advancing Beard and Hair Serum 30ml',
+                'Kahf Nourishing Beard and Hair Oil 30ml'
+            ]},
+            { category: 'Parfum', items: [
+                'Kahf Humbling Forest Eau De Toilette 35 ml',
+                'Kahf Invigorating Waterfall Eau De Toilette 35 ml',
+                'Kahf Revered Oud Eau De Toilette 35 ml',
+                'Kahf True Brotherhood Eau De Toilette 35 ml',
+                'Kahf Revered Oud Eau de Parfum 100ml',
+                'Kahf Saffron Oud Eau de Parfum 100 ml',
+                'Kahf Humbling Forest Eau De Parfum',
+                'Kahf Invigorating Waterfall Eau De Parfum',
+                'Kahf Aquaterrae Extrait de Parfum 50 ml',
+                'Kahf Neofougere Extrait de Parfum 50 ml',
+                'Kahf Santalscape Extrait de Parfum 50 ml',
+                'Kahf Silverwood Extrait de Parfum 50 ml',
+                'Kahf Leatherfield Extrait de Parfum 50 ml',
+                'Kahf Ambremusc Extrait de Parfum 50 ml',
+                'Kahf Spicestone Extrait de Parfum 50 ml',
+                'Kahf Mineralwave Extrait de Parfum 50 ml',
+                'Kahf Aquaterrae Extrait de Parfum 5 ml',
+                'Kahf Neofougere Extrait de Parfum 5 ml',
+                'Kahf Santalscape Extrait de Parfum 5 ml',
+                'Kahf Silverwood Extrait de Parfum 5 ml',
+                'Kahf Leatherfield Extrait de Parfum 5 ml',
+                'Kahf Ambremusc Extrait de Parfum 5 ml',
+                'Kahf Spicestone Extrait de Parfum 5 ml',
+                'Kahf Mineralwave Extrait de Parfum 5 ml',
+                'Kahf All-in-One Power Toning Face Spray 100 ml'
+            ]}
+        ];
 
-                    group.items.forEach(item => {
-                        const option = document.createElement('option');
-                        option.value = item;
-                        option.textContent = item;
-                        optgroup.appendChild(option);
-                    });
+        // ============================================================
+        //  DOM REFS
+        // ============================================================
+        const storeNameInput = document.getElementById('storeName');
+        const transactionType = document.getElementById('transactionType');
+        const productSelect = document.getElementById('productSelect');
+        const quantityInput = document.getElementById('quantity');
+        const submitBtn = document.getElementById('submitBtn');
+        const notification = document.getElementById('notification');
+        const notifIcon = document.getElementById('notifIcon');
+        const notifMsg = document.getElementById('notifMsg');
+        const notifClose = document.getElementById('notifClose');
+        const storeSaved = document.getElementById('storeSaved');
 
-                    productSelect.appendChild(optgroup);
+        // ============================================================
+        //  GOOGLE FORM — ENTRY ID (dari pre-filled link)
+        // ============================================================
+        const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfxbXC2p0rugA63OhJhrR-P5D4rqhD46lXm2eBhxYEqaFKm8g/formResponse';
+
+        const ENTRY_STORE       = 'entry.1645627044';   // Nama Toko
+        const ENTRY_TRANSACTION = 'entry.1703783121';   // Tipe Transaksi
+        const ENTRY_PRODUCT     = 'entry.1834168342';   // Nama Produk
+        const ENTRY_QUANTITY    = 'entry.2006386930';   // Jumlah
+
+        // ============================================================
+        //  POPULATE DROPDOWN PRODUK
+        // ============================================================
+        function populateProducts() {
+            while (productSelect.options.length > 0) productSelect.remove(0);
+
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = '— Pilih produk —';
+            productSelect.appendChild(defaultOption);
+
+            PRODUCT_DATA.forEach(group => {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = group.category;
+                group.items.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item;
+                    option.textContent = item;
+                    optgroup.appendChild(option);
                 });
-            }
-
-            populateProducts();
-
-            // ============================================================
-            //  LOCAL STORAGE — Nama Toko
-            // ============================================================
-            const STORAGE_KEY = 'erlangga_store_name';
-
-            function loadStoreName() {
-                const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved) {
-                    storeNameInput.value = saved;
-                    storeSaved.classList.add('show');
-                }
-            }
-
-            function saveStoreName(name) {
-                if (name && name.trim().length > 0) {
-                    localStorage.setItem(STORAGE_KEY, name.trim());
-                    storeSaved.classList.add('show');
-                } else {
-                    localStorage.removeItem(STORAGE_KEY);
-                    storeSaved.classList.remove('show');
-                }
-            }
-
-            loadStoreName();
-
-            storeNameInput.addEventListener('input', function() {
-                const val = this.value;
-                saveStoreName(val);
+                productSelect.appendChild(optgroup);
             });
+        }
+        populateProducts();
 
-            // ============================================================
-            //  NOTIFICATION
-            // ============================================================
-            function showNotification(message, type = 'success') {
-                const iconMap = {
-                    success: '✅',
-                    error: '❌'
-                };
-                notifIcon.textContent = iconMap[type] || '✅';
-                notifMsg.textContent = message;
+        // ============================================================
+        //  LOCAL STORAGE — Nama Toko
+        // ============================================================
+        const STORAGE_KEY = 'erlangga_store_name';
 
-                notification.className = 'notification show ' + type;
-
-                // Auto-hide after 5 seconds
-                clearTimeout(window._notifTimer);
-                window._notifTimer = setTimeout(() => {
-                    hideNotification();
-                }, 5000);
+        function loadStoreName() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                storeNameInput.value = saved;
+                storeSaved.classList.add('show');
             }
+        }
 
-            function hideNotification() {
-                notification.className = 'notification';
-                clearTimeout(window._notifTimer);
-            }
-
-            notifClose.addEventListener('click', hideNotification);
-
-            // ============================================================
-            //  SUBMIT HANDLER
-            // ============================================================
-            async function handleSubmit(e) {
-                e.preventDefault();
-
-                // --- Validasi ---
-                const store = storeNameInput.value.trim();
-                const product = productSelect.value;
-                const quantity = quantityInput.value.trim();
-
-                if (!store) {
-                    showNotification('Masukkan nama toko terlebih dahulu.', 'error');
-                    storeNameInput.focus();
-                    return;
-                }
-
-                if (!product) {
-                    showNotification('Pilih produk yang akan di-stock opname.', 'error');
-                    productSelect.focus();
-                    return;
-                }
-
-                if (!quantity || isNaN(parseInt(quantity)) || parseInt(quantity) < 0) {
-                    showNotification('Masukkan jumlah stok yang valid (angka ≥ 0).', 'error');
-                    quantityInput.focus();
-                    return;
-                }
-
-                const qtyNum = parseInt(quantity);
-
-                // --- Loading state ---
-                submitBtn.disabled = true;
-                submitBtn.classList.add('loading');
-                const originalText = submitBtn.querySelector('.btn-text').textContent;
-                submitBtn.querySelector('.btn-text').textContent = 'Mengirim...';
-
-                try {
-                    // --- Kirim ke Google Form ---
-                    const formData = new FormData();
-                    formData.append(ENTRY_STORE, store);
-                    formData.append(ENTRY_PRODUCT, product);
-                    formData.append(ENTRY_QUANTITY, String(qtyNum));
-
-                    await fetch(FORM_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: formData
-                    });
-
-                    showNotification(
-                        `Data stok "${product}" berhasil disimpan!`,
-                        'success'
-                    );
-
-                    // Reset quantity
-                    quantityInput.value = '';
-                    quantityInput.focus();
-
-                } catch (err) {
-                    console.error('Submit error:', err);
-                    showNotification(
-                        'Gagal mengirim data. Periksa koneksi atau coba lagi.',
-                        'error'
-                    );
-                } finally {
-                    // --- Reset button ---
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('loading');
-                    submitBtn.querySelector('.btn-text').textContent = originalText;
-                }
-            }
-
-            // ============================================================
-            //  EVENT LISTENERS
-            // ============================================================
-            submitBtn.addEventListener('click', handleSubmit);
-
-            // Enter key pada quantity memicu submit
-            quantityInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    submitBtn.click();
-                }
-            });
-
-            // Enter key pada store name pindah ke product
-            storeNameInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    productSelect.focus();
-                }
-            });
-
-            // ============================================================
-            //  FOCUS MANAGEMENT (UX)
-            // ============================================================
-            // Saat halaman dimuat, fokus ke store name jika kosong
-            if (!storeNameInput.value) {
-                storeNameInput.focus();
+        function saveStoreName(name) {
+            if (name && name.trim().length > 0) {
+                localStorage.setItem(STORAGE_KEY, name.trim());
+                storeSaved.classList.add('show');
             } else {
-                // Jika store name sudah terisi, fokus ke product
+                localStorage.removeItem(STORAGE_KEY);
+                storeSaved.classList.remove('show');
+            }
+        }
+
+        loadStoreName();
+        storeNameInput.addEventListener('input', function() {
+            saveStoreName(this.value);
+        });
+
+        // ============================================================
+        //  NOTIFICATION
+        // ============================================================
+        function showNotification(message, type = 'success') {
+            const iconMap = { success: '✅', error: '❌' };
+            notifIcon.textContent = iconMap[type] || '✅';
+            notifMsg.textContent = message;
+            notification.className = 'notification show ' + type;
+            clearTimeout(window._notifTimer);
+            window._notifTimer = setTimeout(hideNotification, 5000);
+        }
+
+        function hideNotification() {
+            notification.className = 'notification';
+            clearTimeout(window._notifTimer);
+        }
+
+        notifClose.addEventListener('click', hideNotification);
+
+        // ============================================================
+        //  SUBMIT HANDLER
+        // ============================================================
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            const store = storeNameInput.value.trim();
+            const transaction = transactionType.value;
+            const product = productSelect.value;
+            const quantity = quantityInput.value.trim();
+
+            // Validasi
+            if (!store) {
+                showNotification('Masukkan nama toko terlebih dahulu.', 'error');
+                storeNameInput.focus();
+                return;
+            }
+            if (!transaction) {
+                showNotification('Pilih tipe transaksi.', 'error');
+                transactionType.focus();
+                return;
+            }
+            if (!product) {
+                showNotification('Pilih produk yang akan di-stock opname.', 'error');
+                productSelect.focus();
+                return;
+            }
+            if (!quantity || isNaN(parseInt(quantity)) || parseInt(quantity) < 0) {
+                showNotification('Masukkan jumlah stok yang valid (angka ≥ 0).', 'error');
+                quantityInput.focus();
+                return;
+            }
+
+            const qtyNum = parseInt(quantity);
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            const originalText = submitBtn.querySelector('.btn-text').textContent;
+            submitBtn.querySelector('.btn-text').textContent = 'Mengirim...';
+
+            try {
+                const formData = new FormData();
+                formData.append(ENTRY_STORE, store);
+                formData.append(ENTRY_TRANSACTION, transaction);
+                formData.append(ENTRY_PRODUCT, product);
+                formData.append(ENTRY_QUANTITY, String(qtyNum));
+
+                await fetch(FORM_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
+
+                showNotification(`Data stok "${product}" berhasil disimpan!`, 'success');
+                quantityInput.value = '';
+                quantityInput.focus();
+
+            } catch (err) {
+                console.error('Submit error:', err);
+                showNotification('Gagal mengirim data. Periksa koneksi atau coba lagi.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                submitBtn.querySelector('.btn-text').textContent = originalText;
+            }
+        }
+
+        // ============================================================
+        //  EVENT LISTENERS
+        // ============================================================
+        submitBtn.addEventListener('click', handleSubmit);
+
+        quantityInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitBtn.click();
+            }
+        });
+
+        storeNameInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                transactionType.focus();
+            }
+        });
+
+        transactionType.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
                 productSelect.focus();
             }
+        });
 
-            console.log('✅ Erlangga Stock Opname siap digunakan!');
-            console.log('📝 Entry ID sudah diperbarui dengan ID dari form Anda.');
+        productSelect.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                quantityInput.focus();
+            }
+        });
 
-        })();
-    </script>
+        // ============================================================
+        //  FOCUS MANAGEMENT
+        // ============================================================
+        if (!storeNameInput.value) {
+            storeNameInput.focus();
+        } else {
+            transactionType.focus();
+        }
+
+        console.log('✅ Erlangga Stock Opname siap digunakan!');
+        console.log('📝 Semua Entry ID sudah benar.');
+    })();
+</script>
 
 </body>
 </html>
