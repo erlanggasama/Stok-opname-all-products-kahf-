@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
 
-    <!-- Library HTML5-QRCode untuk scan barcode (EAN-13 / EAN-8) -->
+    <!-- Library HTML5-QRCode untuk scan barcode (semua jenis) -->
     <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 
     <style>
@@ -678,7 +678,7 @@
         notifClose.addEventListener('click', hideNotification);
 
         // ================================================================
-        // 7. FITUR SCAN BARCODE (EAN-13 / EAN-8)
+        // 7. FITUR SCAN BARCODE – MODE BEBAS (semua jenis barcode)
         // ================================================================
         let html5QrCode = null;
         let isScanning = false;
@@ -687,22 +687,13 @@
             if (isScanning) return;
             scannerContainer.classList.add('active');
 
-            try {
-                html5QrCode = new Html5Qrcode("scanner-reader", {
-                    formatsToSupport: [
-                        Html5QrcodeSupportedFormats.EAN_13,
-                        Html5QrcodeSupportedFormats.EAN_8
-                    ]
-                });
-            } catch (e) {
-                console.warn('FormatsToSupport tidak didukung, menggunakan default scanner.');
-                html5QrCode = new Html5Qrcode("scanner-reader");
-            }
+            // 1. Hapus batasan jenis barcode agar bisa scan semua jenis (QR, Code 128, EAN, dll)
+            html5QrCode = new Html5Qrcode("scanner-reader");
 
             const config = {
-                fps: 15,
-                qrbox: { width: 300, height: 120 },
-                aspectRatio: 1.777778 // 16:9
+                fps: 10, // Turunkan sedikit agar HP tidak terlalu berat/panas
+                qrbox: 250 // Ubah jadi kotak simetris 250x250 agar lebih gampang fokus di HP
+                // aspectRatio kita hapus agar otomatis mengikuti rasio layar HP Anda
             };
 
             html5QrCode.start({ facingMode: "environment" },
@@ -893,7 +884,7 @@
             transactionType.focus();
         }
 
-        console.log('✅ Erlangga Stock Opname + Barcode (EAN-13) siap digunakan!');
+        console.log('✅ Erlangga Stock Opname + Barcode (Mode Bebas) siap digunakan!');
         console.log('📝 Total produk dalam master:', PRODUCT_MASTER.length);
     })();
 </script>
